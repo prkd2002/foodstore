@@ -9,7 +9,7 @@ ul{
 }
 
 ul li a {
-    height: 25rem;
+    height: 26rem;
     width: 20rem;
     border:1px solid whitesmoke ;
     border-radius: 1rem;
@@ -31,6 +31,70 @@ ngb-rating {
     color: #FFC107; /* Couleur des étoiles */
     font-size: 30px; /* Taille des étoiles */
   }
+
+  .content{
+    padding: .5rem 1rem ;
+    position: relative;
+
+
+  }
+
+  .favorite{
+    position: absolute;
+    top: .5rem;
+    right: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .favorite.not{
+    color: gray;
+
+  }
+
+  .star-rating{
+    margin-bottom: .2rem;
+
+  }
+
+  .product-item-footer{
+    display: flex;
+    justify-content:space-between ;
+    align-items: center;
+    
+
+
+  }
+
+  .origins{
+    flex: 9;
+  }
+
+  .origins span{
+    border-radius: 2rem;
+    background-color: whitesmoke;
+    display: inline-block;
+    font-size: .7rem;
+    color: grey;
+    margin-right: .3rem;
+
+
+  }
+
+  .cook-time{
+    font-size: .8rem;
+    flex: 3;
+    text-align: right;
+    margin-right: 20px;
+  }
+
+  .price{
+    color: #414141;
+    margin-top: .7rem;
+   
+
+  }
+
+
 
 
   

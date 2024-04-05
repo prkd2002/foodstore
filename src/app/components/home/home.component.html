@@ -7,39 +7,45 @@
                     {{food.name}}
 
                 </div>
-                <div>
+                
+                
                     <span class="favorite {{food.favorite? '':'not'}}">
                         &#10084;
     
                     </span>
                     
-                </div>
-                <ngb-rating
+        
+                    
+                <div class="star-rating">
+                    <ngb-rating
                     [max]="5"
                     [(rate)]="food.stars"
                     [readonly]="false">
                 </ngb-rating>
 
-                
+                </div>
+              
                 <div class="product-item-footer">
-                    <div class="origins">
-                        <span class="origins" *ngFor="let origin of food.origins">
+                    <div class="origins" *ngFor="let origin of food.origins">
+                        <span>
                             {{origin}}
                         </span>
 
                     </div>
                     <div class="cook-time">
-                        <span>⏱️</span>
-                        {{food.cookTime}}
+                        <span>⏱️{{food.cookTime}}</span>
+                        
 
                     </div>
-                    <div class="price">
-                        <span>
-                            {{food.price |currency:'EUR' }}
-                        </span>
+                
 
-                    </div>
 
+                </div>
+
+                <div class="price">
+                    <span>
+                        {{food.price |currency:'EUR' }}
+                    </span>
 
                 </div>
             
