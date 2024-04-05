@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FoodService } from '../../services/food/food.service';
+import { Food } from '../../shared/models/Food';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +8,13 @@ import { FoodService } from '../../services/food/food.service';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
-  listOfFoods:String[] = [];
+  listOfFoods:Food[] = [];
 
   constructor(private foodService:FoodService){
 
   }
   ngOnInit(): void {
-    this.listOfFoods = this.foodService.getALL();
+    this.listOfFoods = this.foodService.getAllFoods();
   }
 
 }

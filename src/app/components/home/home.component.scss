@@ -8,8 +8,8 @@ ul{
 
 }
 
-li a {
-    height: 20rem;
+ul li a {
+    height: 25rem;
     width: 20rem;
     border:1px solid whitesmoke ;
     border-radius: 1rem;
@@ -26,3 +26,11 @@ li a:hover{
     cursor: pointer;
 
 }
+
+ngb-rating {
+    color: #FFC107; /* Couleur des étoiles */
+    font-size: 30px; /* Taille des étoiles */
+  }
+
+
+  
