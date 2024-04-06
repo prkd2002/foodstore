@@ -11,6 +11,8 @@ import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
 import { TagsComponent } from './components/tags/tags.component';
 import { FoodPageComponent } from './components/food-page/food-page.component';
+import { CartPageComponent } from './components/cart-page/cart-page.component';
+import { CartService } from './services/cart/cart.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { FoodPageComponent } from './components/food-page/food-page.component';
     HomeComponent,
     SearchComponent,
     TagsComponent,
-    FoodPageComponent
+    FoodPageComponent,
+    CartPageComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ import { FoodPageComponent } from './components/food-page/food-page.component';
     FormsModule
   ],
   providers: [
-    FoodService
+    FoodService,
+    CartService
   ],
   bootstrap: [AppComponent]
 })
