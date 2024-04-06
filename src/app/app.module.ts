@@ -9,13 +9,15 @@ import { FoodService } from './services/food/food.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
+import { TagsComponent } from './components/tags/tags.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    SearchComponent
+    SearchComponent,
+    TagsComponent
   ],
   imports: [
     BrowserModule,

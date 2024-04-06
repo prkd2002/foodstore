@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Food } from '../../shared/models/Food';
+import { Tag } from '../../shared/models/Tag';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class FoodService {
         origins:['Germany'],
         stars:4.0,
         imageUrl:'/assets/images/foods/food1.jpg',
-        tags:['FasFood','Fry']
+        tags:['SlowFood', 'Fry']
 
       },
       {
@@ -31,7 +32,7 @@ export class FoodService {
         origins:['Cameroon'],
         stars:4.5,
         imageUrl:'/assets/images/foods/food2.jpg',
-        tags:['FasFood','Fry']
+        tags:['Soup', 'SlowFood']
 
       },
       {
@@ -43,7 +44,7 @@ export class FoodService {
         origins:['Cameroon'],
         stars:4.0,
         imageUrl:'/assets/images/foods/food3.jpeg',
-        tags:['FastFood','Fry']
+        tags:['SlowFood']
 
       },
       {
@@ -55,7 +56,7 @@ export class FoodService {
         origins:['Cameroon'],
         stars:4.6,
         imageUrl:'/assets/images/foods/food4.jpg',
-        tags:['FasFood','Fry']
+        tags:['Fry', 'SlowFood']
 
       },
       {
@@ -67,7 +68,7 @@ export class FoodService {
         origins:['Cameroon'],
         stars:4.0,
         imageUrl:'/assets/images/foods/food5.jpeg',
-        tags:['FasFood','Fry']
+        tags:['FastFood','Fry']
 
       },
       {
@@ -79,7 +80,43 @@ export class FoodService {
         origins:['Cameroon'],
         stars:4.0,
         imageUrl:'/assets/images/foods/food6.jpg',
-        tags:['FasFood','Fry']
+        tags:['SLowFood']
+
+      },
+      {
+        id:7,
+        name:'Salade de Fruirs exotiques',
+        price:25,
+        cookTime:'30-45',
+        favorite:false,
+        origins:['Cameroon'],
+        stars:4.0,
+        imageUrl:'/assets/images/foods/food7.jpg',
+        tags:['Lunch']
+
+      },
+      {
+        id:8,
+        name:'Pizza',
+        price:18,
+        cookTime:'40-50',
+        favorite:false,
+        origins:['Cameroon'],
+        stars:4.6,
+        imageUrl:'/assets/images/foods/food8.jpg',
+        tags:['FastFood','Pizza']
+
+      },
+      {
+        id:9,
+        name:'Hamburger',
+        price:14,
+        cookTime:'40-90',
+        favorite:false,
+        origins:['Cameroon'],
+        stars:4.0,
+        imageUrl:'/assets/images/foods/food9.webp',
+        tags:['Hamburger', 'Fry']
 
       }
 
@@ -87,5 +124,44 @@ export class FoodService {
 
     ]
 
+  }
+
+
+  getAllFoodsByTag(tag:string):Food[]{
+    return tag === 'AllFoods'?
+     this.getAllFoods() :
+     this.getAllFoods().filter(food => food.tags?.includes(tag));
+
+    /*
+    if(tag == 'All'){
+      return this.getAllFoods();
+    }else{
+      return this.getAllFoods().filter(food => food.tags?.includes(tag))
+    }
+    */
+
+
+  }
+
+  getAllTags():Tag[]{
+    return [
+      {name:'AllFoods', count:9},
+      {name: 'FastFood', count:3},
+      {name:'Pizza',count:1},
+      {name:'Lunch',count:1},
+      {name:'SlowFood', count: 5 },
+      {name:'Hamburger',count:1},
+      {name:'Fry', count:4 },
+      {name:'Soup',count: 1}
+    ]
+
+    
+  }
+
+
+  getAllFoodsBySearchItem(searchItem:string):Food[]{
+    return searchItem === ''?
+            this.getAllFoods():
+            this.getAllFoods().filter(food => food.name.toLowerCase().includes(searchItem.toLowerCase()));
   }
 }
