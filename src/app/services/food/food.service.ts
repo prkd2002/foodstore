@@ -80,7 +80,7 @@ export class FoodService {
         origins:['Cameroon'],
         stars:4.0,
         imageUrl:'/assets/images/foods/food6.jpg',
-        tags:['SLowFood']
+        tags:['SlowFood']
 
       },
       {
@@ -163,5 +163,10 @@ export class FoodService {
     return searchItem === ''?
             this.getAllFoods():
             this.getAllFoods().filter(food => food.name.toLowerCase().includes(searchItem.toLowerCase()));
+  }
+
+
+  getFoodById(id:number):Food{
+    return this.getAllFoods().find(food => food.id == id)!;
   }
 }

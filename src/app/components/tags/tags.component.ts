@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Tag } from '../../shared/models/Tag';
 import { FoodService } from '../../services/food/food.service';
 
@@ -8,7 +8,10 @@ import { FoodService } from '../../services/food/food.service';
   styleUrl: './tags.component.scss'
 })
 export class TagsComponent implements OnInit {
-  listOfTags:Tag[] = [];
+
+  @Input()
+  foodPageTags?:string[];
+  listOfTags?:Tag[];
 
   constructor(
     private foodService:FoodService
