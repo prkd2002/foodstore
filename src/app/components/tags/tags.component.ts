@@ -13,6 +13,11 @@ export class TagsComponent implements OnInit {
   foodPageTags?:string[];
   listOfTags?:Tag[];
 
+  @Input()
+  justitfyContent:string = 'center';
+
+
+
   constructor(
     private foodService:FoodService
   ){
