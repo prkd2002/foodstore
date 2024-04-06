@@ -1,5 +1,9 @@
 <app-search></app-search>
 <app-tags></app-tags>
+<app-not-found 
+[visible]="!listOfFoods || listOfFoods.length <=0"
+[resetLinkText]="'Reset'"
+></app-not-found>
 <ul>
     <li *ngFor="let food of listOfFoods">
         <a routerLink="/food/{{food.id}}">
